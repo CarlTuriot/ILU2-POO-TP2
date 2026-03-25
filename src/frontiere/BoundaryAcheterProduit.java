@@ -10,6 +10,14 @@ public class BoundaryAcheterProduit {
 	}
 
 	public void acheterProduit(String nomAcheteur) {
-		// TODO à completer
+		boolean acheteurReconnu = controlAcheterProduit.isHabitant(nomAcheteur);
+		if(!acheteurReconnu) {
+			System.out.println("Je suis désolée " + nomAcheteur 
+					+ " mais il faut etre un habita,t de notre village pour commercer ici.");
+		} else {
+			String produit = Clavier.entrerChaine("Quel produit voulez-vous acheter ?");
+			
+			String[] donneesEtalProduit = controlAcheterProduit.chercherEtalProduit(produit);
+		}
 	}
 }
